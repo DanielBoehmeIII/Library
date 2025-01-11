@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img
+          src="https://pics.clipartpng.com/Red_Book_PNG_Clipart-1063.png"
+          alt="Library Logo"
+        />
+        <div>Library Application</div>
+      </div>
+      <div class="content">
+        <div class="content-left">
+          <form class="form">
+            <div>Title</div>
+            <input id="title" placeholder="Title" required />
+            <div>Author</div>
+            <input id="author" placeholder="Author" required />
+            <div>Pages</div>
+            <input id="pages" placeholder="Pages" />
+            <div>Available</div>
+            <input type="checkbox" id="Available" />
+            <div class="buttons">
+              <button id="add-book-button">Add Book</button>
+              <button id="display-library-button">Display Library</button>
+            </div>
+          </form>
+        </div>
+        <div class="content-right">
+          <div class="book-display-div">
+            <div class="display-div">
+              <div></div>
+              <div class="title-display"></div>
+            </div>
+            <div class="display-div">
+              <div>Author:</div>
+              <div class="author-display"></div>
+            </div>
+            <div class="display-div">
+              <div>Pages:</div>
+              <div class="pages-display"></div>
+            </div>
+            <div class="display-div">
+              <div>Available:</div>
+              <div class="available-display"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="javascript.js"></script>
+  </body>
+</html>
