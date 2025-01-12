@@ -17,40 +17,36 @@
       </div>
       <div class="content">
         <div class="content-left">
-          <form class="form">
-            <div>Title</div>
-            <input id="title" placeholder="Title" required />
-            <div>Author</div>
-            <input id="author" placeholder="Author" required />
-            <div>Pages</div>
-            <input id="pages" placeholder="Pages" />
-            <div>Available</div>
-            <input type="checkbox" id="Available" />
-            <div class="buttons">
+          <div class="form-container">
+            <form class="form">
+              <div>Title</div>
+              <input id="title" placeholder="Title" required />
+              <div>Author</div>
+              <input id="author" placeholder="Author" required />
+              <div>Pages</div>
+              <input type="number" id="pages" placeholder="Pages" />
+              <div>Available</div>
+              <input type="checkbox" id="status" />
               <button id="add-book-button">Add Book</button>
-              <button id="display-library-button">Display Library</button>
-            </div>
-          </form>
+            </form>
+          </div>
+          <span>
+            Photo by&nbsp;
+            <a href="https://unsplash.com/@henry_be">Henry Be&nbsp;</a>
+            on&nbsp;
+            <a href="https://unsplash.com">Unsplash</a>
+          </span>
         </div>
         <div class="content-right">
-          <div class="book-display-div">
-            <div class="display-div">
-              <div></div>
-              <div class="title-display"></div>
-            </div>
-            <div class="display-div">
-              <div>Author:</div>
-              <div class="author-display"></div>
-            </div>
-            <div class="display-div">
-              <div>Pages:</div>
-              <div class="pages-display"></div>
-            </div>
-            <div class="display-div">
-              <div>Available:</div>
-              <div class="available-display"></div>
-            </div>
+          <div class="card-container">
+            <div id="card"></div>
           </div>
+          <span>
+            Photo by&nbsp;
+            <a href="https://unsplash.com/@gryffyn1">Gryffyn M&nbsp;</a>
+            on&nbsp;
+            <a href="https://unsplash.com">Unsplash</a>
+          </span>
         </div>
       </div>
     </div>
