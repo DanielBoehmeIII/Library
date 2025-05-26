@@ -1,0 +1,6 @@
+nohup: ignoring input
+
+> dev
+> webpack serve --open --watch --config webpack.dev.js
+
+sh: line 1: webpack: command not found

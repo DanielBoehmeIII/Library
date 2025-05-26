@@ -29,10 +29,28 @@ addBook.addEventListener("click", function (e) {
     return;
   }
 
-  const author = document.querySelector("#author").value || "?";
-  const pages = document.querySelector("#pages").value || "?";
-  const status = document.querySelector("#status").checked;
+  const authorInput = document.querySelector("#author");
+  const author = authorInput.value;
+  if (author.trim() === "") {
+    authorInput.setCustomValidity("Please enter an author.");
+    authorInput.reportValidity();
+    return;
+  }
+  const pagesInput = document.querySelector("#pages");
+  const pages = pagesInput.value;
+  if (pages.trim() === "") {
+    pagesInput.setCustomValidity("Please enter an author.");
+    pagesInput.reportValidity();
+    return;
+  }
 
+  const statusInput = document.querySelector("#status");
+  const status = statusInput.checked;
+  if (!status) {
+    statusInput.setCustomValidity("Please enter an author.");
+    statusInput.reportValidity();
+    return;
+  }
   const book = new Book(title, author, pages, status, itemNum);
   addBookToLibrary(book);
   card(book); // Pass the book object to the card function
@@ -44,7 +62,7 @@ display.addEventListener("click", displayLibrary);
 
 function card(book) {
   const grandparent = document.getElementById("card");
-  const parent = document.createElement("display-div");
+  const parent = document.createElement("div");
   parent.setAttribute("id", `item${book.itemNum}`);
 
   const titleElement = document.createElement("h2");
@@ -87,6 +105,7 @@ function card(book) {
   removeBtn.addEventListener("click", () => {
     removeItem(`item${book.itemNum}`);
   });
+
   parent.appendChild(removeBtn);
 
   grandparent.appendChild(parent);
@@ -96,4 +115,10 @@ function removeItem(id) {
   const rmvId = document.getElementById(id);
   const grandparent = document.getElementById("card");
   grandparent.removeChild(rmvId);
+
+  const itemNumber = parseInt(id.replace("item", ""));
+  const index = myLibrary.findIndex((b) => b.itemNum === itemNumber);
+  if (index !== -1) {
+    myLibrary.splice(index, 1);
+  }
 }
